@@ -4,7 +4,7 @@ import { Component, OnInit, Input } from '@angular/core';
     selector: 'star-rating',
     templateUrl: './star-rating.component.html',
     styleUrls: [`
-        .crop {overflow: hidden;}
+        .crop { overflow: hidden; }
     `]
 })
 
