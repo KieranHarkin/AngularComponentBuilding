@@ -7,6 +7,9 @@ import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { PhotoListComponent } from './components/photos/photo-list.component';
+import { StarRatingComponent } from './components/shared/star-rating.component';
+import { PhotoService } from './components/photos/photo.service';
+
 
 export const sharedConfig: NgModule = {
     bootstrap: [ AppComponent ],
@@ -16,8 +19,10 @@ export const sharedConfig: NgModule = {
         CounterComponent,
         FetchDataComponent,
         PhotoListComponent,
+        StarRatingComponent,
         HomeComponent
     ],
+    providers: [PhotoService],
     imports: [
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },

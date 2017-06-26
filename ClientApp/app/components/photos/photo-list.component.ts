@@ -1,11 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { PhotoService } from './photo.service'
+import { IPhoto } from './photo.model'
 
 @Component({
-    templateUrl: './photo-list.component.html'
+    providers: [PhotoService],
+    templateUrl: './photo-list.component.html',
+    styleUrls:[`
+        .photo-list {display: inline-block; margin: 5px;}
+    `]
 })
 
 export class PhotoListComponent implements OnInit {
-    constructor() { }
+    constructor(private _photoService: PhotoService) { }
 
-    ngOnInit() { }
+    public photos: IPhoto[];
+
+    ngOnInit() {
+        this.photos = this._photoService.getPhotos();
+    }
 }

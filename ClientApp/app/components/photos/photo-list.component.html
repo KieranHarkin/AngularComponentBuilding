@@ -1,1 +1,6 @@
-List of photos will go here
+<div *ngFor="let photo of photos" class='photo-list'>
+    <div>
+    <img [src]="photo.url" alt="photo.title"><br>
+    <span><star-rating [rating]="photo.rating"></star-rating></span>
+    </div>
+</div>
