@@ -7,36 +7,46 @@ export class PhotoService {
     public getPhotos() : IPhoto[] {
         return photos;
     }
+
+    public getPhoto(id:number) : IPhoto {
+        return photos.find(photo => photo.id === id);
+    }
 }
 
      const photos = [
         {
-            'title':'test photo',
+            'id': 1,
+            'title':'test photo one',
             'url': 'http://via.placeholder.com/300x300',
             'rating': 4
         },
         {
-            'title':'test photo',
+            'id': 2,            
+            'title':'test photo two',
             'url': 'http://via.placeholder.com/300x300',
             'rating': 2            
         },
         {
-            'title':'test photo',
+            'id': 3,            
+            'title':'test photo three',
             'url': 'http://via.placeholder.com/300x300',
             'rating': 1          
         },
         {
-            'title':'test photo',
+            'id': 4,            
+            'title':'test photo four',
             'url': 'http://via.placeholder.com/300x300',
             'rating': 5            
         },
         {
-            'title':'test photo',
+            'id': 5,            
+            'title':'test photo five',
             'url': 'http://via.placeholder.com/300x300',
             'rating': 3            
         },
         {
-            'title':'test photo',
+            'id': 6,            
+            'title':'test photo six',
             'url': 'http://via.placeholder.com/300x300',
             'rating': 5            
         }

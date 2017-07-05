@@ -14,8 +14,10 @@ export class PhotoListComponent implements OnInit {
     constructor(private _photoService: PhotoService) { }
 
     public photos: IPhoto[];
-
+    public photosReady: boolean = false;
     ngOnInit() {
         this.photos = this._photoService.getPhotos();
+        this.photosReady = true;
+        console.log("Photos ready");
     }
 }

@@ -1,6 +1,8 @@
+<div *ngIf="photosReady">
 <div *ngFor="let photo of photos" class='photo-list'>
-    <div>
+    <div [routerLink]="['/photos', photo.id]">
     <img [src]="photo.url" alt="photo.title"><br>
     <span><star-rating [rating]="photo.rating"></star-rating></span>
     </div>
+</div>
 </div>

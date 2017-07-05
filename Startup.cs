@@ -38,7 +38,7 @@ namespace aspnetcore_angular_component_building
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            if (env.IsDevelopment())
+            if (env.IsDevelopment() || 1 == 1)
             {
                 app.UseDeveloperExceptionPage();
                 app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions {

@@ -31,6 +31,18 @@
                     <a [routerLink]="['/photos']">
                         <span class='glyphicon glyphicon-th-list'></span> Photos
                     </a>
+                </li>                
+                <li [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['/forms']">
+                        <span class='glyphicon glyphicon-th-list'></span> Forms
+                    </a>
+                    <ul>
+                        <li [routerLinkActive]="['link-active']">
+                            <a [routerLink]="['/forms/multi-step']">
+                                Multi Step Form
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </div>
