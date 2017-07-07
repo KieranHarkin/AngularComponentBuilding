@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './components/app/app.component'
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
@@ -9,6 +10,7 @@ import { CounterComponent } from './components/counter/counter.component';
 import { PhotoListComponent } from './components/photos/photo-list.component';
 import { PhotoDetailsComponent } from './components/photos/photo-details.component';
 import { FormsListComponent } from './components/forms/forms-list.component';
+import { TemplateFormComponent } from './components/forms/template-form/template-form.component';
 
 import { StarRatingComponent } from './components/shared/star-rating.component';
 
@@ -26,11 +28,13 @@ export const sharedConfig: NgModule = {
         PhotoListComponent,
         PhotoDetailsComponent,
         FormsListComponent,
+        TemplateFormComponent,
         StarRatingComponent,
         HomeComponent
     ],
     providers: [PhotoService],
     imports: [
+        FormsModule,
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
@@ -39,6 +43,7 @@ export const sharedConfig: NgModule = {
             { path: 'photos', component: PhotoListComponent },
             { path: 'photos/:id', component: PhotoDetailsComponent},
             { path: 'forms', component: FormsListComponent},
+            { path: 'forms/template-form', component: TemplateFormComponent},
             { path: '**', redirectTo: 'home' }
         ])
     ]

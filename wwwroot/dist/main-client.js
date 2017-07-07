@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e64f2eb3919446779b73"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "a5d8dfd2554154b5daa2"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -704,7 +704,7 @@
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return hotCreateRequire(53)(__webpack_require__.s = 53);
+/******/ 	return hotCreateRequire(56)(__webpack_require__.s = 56);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -1085,10 +1085,10 @@ module.exports = (__webpack_require__(1))(40);
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-__webpack_require__(40);
-__webpack_require__(50);
+__webpack_require__(43);
+__webpack_require__(53);
 var core_1 = __webpack_require__(0);
-var platform_browser_dynamic_1 = __webpack_require__(49);
+var platform_browser_dynamic_1 = __webpack_require__(52);
 var app_module_client_1 = __webpack_require__(12);
 if (true) {
     module['hot'].accept();
@@ -1125,7 +1125,7 @@ var options = {
   name: ''
 };
 if (true) {
-  var querystring = __webpack_require__(39);
+  var querystring = __webpack_require__(42);
   var overrides = querystring.parse(__resourceQuery.slice(1));
   if (overrides.path) options.path = overrides.path;
   if (overrides.timeout) options.timeout = overrides.timeout;
@@ -1245,11 +1245,11 @@ if (typeof window !== 'undefined') {
 }
 
 function createReporter() {
-  var strip = __webpack_require__(41);
+  var strip = __webpack_require__(44);
 
   var overlay;
   if (typeof document !== 'undefined' && options.overlay) {
-    overlay = __webpack_require__(44);
+    overlay = __webpack_require__(47);
   }
 
   var styles = {
@@ -1302,7 +1302,7 @@ function createReporter() {
   };
 }
 
-var processUpdate = __webpack_require__(45);
+var processUpdate = __webpack_require__(48);
 
 var customHandler;
 var subscribeAllHandler;
@@ -1367,7 +1367,7 @@ if (module) {
   };
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, "?path=%2F__webpack_hmr", __webpack_require__(46)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, "?path=%2F__webpack_hmr", __webpack_require__(49)(module)))
 
 /***/ }),
 /* 9 */
@@ -1583,8 +1583,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
-var platform_browser_1 = __webpack_require__(51);
-var forms_1 = __webpack_require__(48);
+var platform_browser_1 = __webpack_require__(54);
+var forms_1 = __webpack_require__(51);
 var http_1 = __webpack_require__(5);
 var app_module_shared_1 = __webpack_require__(13);
 var AppModule = (function () {
@@ -1617,15 +1617,17 @@ exports.AppModule = AppModule;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var router_1 = __webpack_require__(6);
+var forms_1 = __webpack_require__(51);
 var app_component_1 = __webpack_require__(14);
-var navmenu_component_1 = __webpack_require__(19);
-var home_component_1 = __webpack_require__(18);
-var fetchdata_component_1 = __webpack_require__(16);
+var navmenu_component_1 = __webpack_require__(21);
+var home_component_1 = __webpack_require__(20);
+var fetchdata_component_1 = __webpack_require__(17);
 var counter_component_1 = __webpack_require__(15);
-var photo_list_component_1 = __webpack_require__(21);
-var photo_details_component_1 = __webpack_require__(20);
-var forms_list_component_1 = __webpack_require__(17);
-var star_rating_component_1 = __webpack_require__(22);
+var photo_list_component_1 = __webpack_require__(23);
+var photo_details_component_1 = __webpack_require__(22);
+var forms_list_component_1 = __webpack_require__(18);
+var template_form_component_1 = __webpack_require__(19);
+var star_rating_component_1 = __webpack_require__(24);
 var photo_service_1 = __webpack_require__(2);
 exports.sharedConfig = {
     bootstrap: [app_component_1.AppComponent],
@@ -1637,11 +1639,13 @@ exports.sharedConfig = {
         photo_list_component_1.PhotoListComponent,
         photo_details_component_1.PhotoDetailsComponent,
         forms_list_component_1.FormsListComponent,
+        template_form_component_1.TemplateFormComponent,
         star_rating_component_1.StarRatingComponent,
         home_component_1.HomeComponent
     ],
     providers: [photo_service_1.PhotoService],
     imports: [
+        forms_1.FormsModule,
         router_1.RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: home_component_1.HomeComponent },
@@ -1650,6 +1654,7 @@ exports.sharedConfig = {
             { path: 'photos', component: photo_list_component_1.PhotoListComponent },
             { path: 'photos/:id', component: photo_details_component_1.PhotoDetailsComponent },
             { path: 'forms', component: forms_list_component_1.FormsListComponent },
+            { path: 'forms/template-form', component: template_form_component_1.TemplateFormComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]
@@ -1678,8 +1683,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'app',
-        template: __webpack_require__(28),
-        styles: [__webpack_require__(42)]
+        template: __webpack_require__(30),
+        styles: [__webpack_require__(45)]
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
@@ -1711,7 +1716,7 @@ var CounterComponent = (function () {
 CounterComponent = __decorate([
     core_1.Component({
         selector: 'counter',
-        template: __webpack_require__(29)
+        template: __webpack_require__(31)
     })
 ], CounterComponent);
 exports.CounterComponent = CounterComponent;
@@ -1719,6 +1724,37 @@ exports.CounterComponent = CounterComponent;
 
 /***/ }),
 /* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Customer = (function () {
+    function Customer(firstName, lastName, email, sendCatalog, addressType, street1, street2, city, state, zip) {
+        if (firstName === void 0) { firstName = ''; }
+        if (lastName === void 0) { lastName = ''; }
+        if (email === void 0) { email = ''; }
+        if (sendCatalog === void 0) { sendCatalog = false; }
+        if (addressType === void 0) { addressType = 'home'; }
+        if (state === void 0) { state = ''; }
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.sendCatalog = sendCatalog;
+        this.addressType = addressType;
+        this.street1 = street1;
+        this.street2 = street2;
+        this.city = city;
+        this.state = state;
+        this.zip = zip;
+    }
+    return Customer;
+}());
+exports.Customer = Customer;
+
+
+/***/ }),
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1750,7 +1786,7 @@ var FetchDataComponent = (function () {
 FetchDataComponent = __decorate([
     core_1.Component({
         selector: 'fetchdata',
-        template: __webpack_require__(30)
+        template: __webpack_require__(32)
     }),
     __param(1, core_1.Inject('ORIGIN_URL')),
     __metadata("design:paramtypes", [http_1.Http, String])
@@ -1759,7 +1795,7 @@ exports.FetchDataComponent = FetchDataComponent;
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1783,7 +1819,7 @@ var FormsListComponent = (function () {
 }());
 FormsListComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(31)
+        template: __webpack_require__(33)
     }),
     __metadata("design:paramtypes", [])
 ], FormsListComponent);
@@ -1791,7 +1827,46 @@ exports.FormsListComponent = FormsListComponent;
 
 
 /***/ }),
-/* 18 */
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(0);
+var customer_1 = __webpack_require__(16);
+var TemplateFormComponent = (function () {
+    function TemplateFormComponent() {
+        this.customer = new customer_1.Customer();
+        this.countries = ["Ireland", "England", "Scotland", "Wales"];
+    }
+    TemplateFormComponent.prototype.ngOnInit = function () { };
+    TemplateFormComponent.prototype.save = function (customerForm) {
+        console.log(customerForm.form);
+        console.log('Saved: ' + JSON.stringify(customerForm.value));
+    };
+    return TemplateFormComponent;
+}());
+TemplateFormComponent = __decorate([
+    core_1.Component({
+        template: __webpack_require__(34)
+    }),
+    __metadata("design:paramtypes", [])
+], TemplateFormComponent);
+exports.TemplateFormComponent = TemplateFormComponent;
+
+
+/***/ }),
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1812,14 +1887,14 @@ var HomeComponent = (function () {
 HomeComponent = __decorate([
     core_1.Component({
         selector: 'home',
-        template: __webpack_require__(32)
+        template: __webpack_require__(35)
     })
 ], HomeComponent);
 exports.HomeComponent = HomeComponent;
 
 
 /***/ }),
-/* 19 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1840,15 +1915,15 @@ var NavMenuComponent = (function () {
 NavMenuComponent = __decorate([
     core_1.Component({
         selector: 'nav-menu',
-        template: __webpack_require__(33),
-        styles: [__webpack_require__(43)]
+        template: __webpack_require__(36),
+        styles: [__webpack_require__(46)]
     })
 ], NavMenuComponent);
 exports.NavMenuComponent = NavMenuComponent;
 
 
 /***/ }),
-/* 20 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1882,7 +1957,7 @@ var PhotoDetailsComponent = (function () {
 PhotoDetailsComponent = __decorate([
     core_1.Component({
         providers: [photo_service_1.PhotoService],
-        template: __webpack_require__(34)
+        template: __webpack_require__(37)
     }),
     __metadata("design:paramtypes", [photo_service_1.PhotoService, router_1.Router])
 ], PhotoDetailsComponent);
@@ -1890,7 +1965,7 @@ exports.PhotoDetailsComponent = PhotoDetailsComponent;
 
 
 /***/ }),
-/* 21 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1922,7 +1997,7 @@ var PhotoListComponent = (function () {
 PhotoListComponent = __decorate([
     core_1.Component({
         providers: [photo_service_1.PhotoService],
-        template: __webpack_require__(35),
+        template: __webpack_require__(38),
         styles: ["\n        .photo-list {display: inline-block; margin: 5px;}\n    "]
     }),
     __metadata("design:paramtypes", [photo_service_1.PhotoService])
@@ -1931,7 +2006,7 @@ exports.PhotoListComponent = PhotoListComponent;
 
 
 /***/ }),
-/* 22 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1962,7 +2037,7 @@ __decorate([
 StarRatingComponent = __decorate([
     core_1.Component({
         selector: 'star-rating',
-        template: __webpack_require__(36),
+        template: __webpack_require__(39),
         styles: ["\n        .crop { overflow: hidden; }\n    "]
     }),
     __metadata("design:paramtypes", [])
@@ -1971,7 +2046,7 @@ exports.StarRatingComponent = StarRatingComponent;
 
 
 /***/ }),
-/* 23 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(undefined);
@@ -1985,7 +2060,7 @@ exports.push([module.i, "@media (max-width: 767px) {\r\n    /* On small screens,
 
 
 /***/ }),
-/* 24 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(undefined);
@@ -1999,19 +2074,19 @@ exports.push([module.i, "li .glyphicon {\r\n    margin-right: 10px;\r\n}\r\n\r\n
 
 
 /***/ }),
-/* 25 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = {
-  XmlEntities: __webpack_require__(27),
-  Html4Entities: __webpack_require__(26),
+  XmlEntities: __webpack_require__(29),
+  Html4Entities: __webpack_require__(28),
   Html5Entities: __webpack_require__(4),
   AllHtmlEntities: __webpack_require__(4)
 };
 
 
 /***/ }),
-/* 26 */
+/* 28 */
 /***/ (function(module, exports) {
 
 var HTML_ALPHA = ['apos', 'nbsp', 'iexcl', 'cent', 'pound', 'curren', 'yen', 'brvbar', 'sect', 'uml', 'copy', 'ordf', 'laquo', 'not', 'shy', 'reg', 'macr', 'deg', 'plusmn', 'sup2', 'sup3', 'acute', 'micro', 'para', 'middot', 'cedil', 'sup1', 'ordm', 'raquo', 'frac14', 'frac12', 'frac34', 'iquest', 'Agrave', 'Aacute', 'Acirc', 'Atilde', 'Auml', 'Aring', 'Aelig', 'Ccedil', 'Egrave', 'Eacute', 'Ecirc', 'Euml', 'Igrave', 'Iacute', 'Icirc', 'Iuml', 'ETH', 'Ntilde', 'Ograve', 'Oacute', 'Ocirc', 'Otilde', 'Ouml', 'times', 'Oslash', 'Ugrave', 'Uacute', 'Ucirc', 'Uuml', 'Yacute', 'THORN', 'szlig', 'agrave', 'aacute', 'acirc', 'atilde', 'auml', 'aring', 'aelig', 'ccedil', 'egrave', 'eacute', 'ecirc', 'euml', 'igrave', 'iacute', 'icirc', 'iuml', 'eth', 'ntilde', 'ograve', 'oacute', 'ocirc', 'otilde', 'ouml', 'divide', 'oslash', 'ugrave', 'uacute', 'ucirc', 'uuml', 'yacute', 'thorn', 'yuml', 'quot', 'amp', 'lt', 'gt', 'OElig', 'oelig', 'Scaron', 'scaron', 'Yuml', 'circ', 'tilde', 'ensp', 'emsp', 'thinsp', 'zwnj', 'zwj', 'lrm', 'rlm', 'ndash', 'mdash', 'lsquo', 'rsquo', 'sbquo', 'ldquo', 'rdquo', 'bdquo', 'dagger', 'Dagger', 'permil', 'lsaquo', 'rsaquo', 'euro', 'fnof', 'Alpha', 'Beta', 'Gamma', 'Delta', 'Epsilon', 'Zeta', 'Eta', 'Theta', 'Iota', 'Kappa', 'Lambda', 'Mu', 'Nu', 'Xi', 'Omicron', 'Pi', 'Rho', 'Sigma', 'Tau', 'Upsilon', 'Phi', 'Chi', 'Psi', 'Omega', 'alpha', 'beta', 'gamma', 'delta', 'epsilon', 'zeta', 'eta', 'theta', 'iota', 'kappa', 'lambda', 'mu', 'nu', 'xi', 'omicron', 'pi', 'rho', 'sigmaf', 'sigma', 'tau', 'upsilon', 'phi', 'chi', 'psi', 'omega', 'thetasym', 'upsih', 'piv', 'bull', 'hellip', 'prime', 'Prime', 'oline', 'frasl', 'weierp', 'image', 'real', 'trade', 'alefsym', 'larr', 'uarr', 'rarr', 'darr', 'harr', 'crarr', 'lArr', 'uArr', 'rArr', 'dArr', 'hArr', 'forall', 'part', 'exist', 'empty', 'nabla', 'isin', 'notin', 'ni', 'prod', 'sum', 'minus', 'lowast', 'radic', 'prop', 'infin', 'ang', 'and', 'or', 'cap', 'cup', 'int', 'there4', 'sim', 'cong', 'asymp', 'ne', 'equiv', 'le', 'ge', 'sub', 'sup', 'nsub', 'sube', 'supe', 'oplus', 'otimes', 'perp', 'sdot', 'lceil', 'rceil', 'lfloor', 'rfloor', 'lang', 'rang', 'loz', 'spades', 'clubs', 'hearts', 'diams'];
@@ -2164,7 +2239,7 @@ module.exports = Html4Entities;
 
 
 /***/ }),
-/* 27 */
+/* 29 */
 /***/ (function(module, exports) {
 
 var ALPHA_INDEX = {
@@ -2325,61 +2400,67 @@ module.exports = XmlEntities;
 
 
 /***/ }),
-/* 28 */
+/* 30 */
 /***/ (function(module, exports) {
 
 module.exports = "<div class='container-fluid'>\r\n    <div class='row'>\r\n        <div class='col-sm-3'>\r\n            <nav-menu></nav-menu>\r\n        </div>\r\n        <div class='col-sm-9 body-content'>\r\n            <router-outlet></router-outlet>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
 
 /***/ }),
-/* 29 */
+/* 31 */
 /***/ (function(module, exports) {
 
 module.exports = "<h1>Counter</h1>\r\n\r\n<p>This is a simple example of an Angular component.</p>\r\n\r\n<p>Current count: <strong>{{ currentCount }}</strong></p>\r\n\r\n<button (click)=\"incrementCounter()\">Increment</button>\r\n";
 
 /***/ }),
-/* 30 */
+/* 32 */
 /***/ (function(module, exports) {
 
 module.exports = "<h1>Weather forecast</h1>\r\n\r\n<p>This component demonstrates fetching data from the server.</p>\r\n\r\n<p *ngIf=\"!forecasts\"><em>Loading...</em></p>\r\n\r\n<table class='table' *ngIf=\"forecasts\">\r\n    <thead>\r\n        <tr>\r\n            <th>Date</th>\r\n            <th>Temp. (C)</th>\r\n            <th>Temp. (F)</th>\r\n            <th>Summary</th>\r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n        <tr *ngFor=\"let forecast of forecasts\">\r\n            <td>{{ forecast.dateFormatted }}</td>\r\n            <td>{{ forecast.temperatureC }}</td>\r\n            <td>{{ forecast.temperatureF }}</td>\r\n            <td>{{ forecast.summary }}</td>\r\n        </tr>\r\n    </tbody>\r\n</table>\r\n";
 
 /***/ }),
-/* 31 */
-/***/ (function(module, exports) {
-
-module.exports = "<h4>Forms List Component</h4>\r\n\r\n<div class=\"container\">\r\n    <div class=\"row\">\r\n        <div class=\"col-md-3\">\r\n            Template Form\r\n        </div>\r\n        <div class=\"col-md-3\">\r\n            Reactive Form\r\n        </div>\r\n        <div class=\"col-md-3\">\r\n            Multi-Step Form\r\n        </div>\r\n    </div>\r\n</div>";
-
-/***/ }),
-/* 32 */
-/***/ (function(module, exports) {
-
-module.exports = "<h1>Hello, world!</h1>\r\n<p>Welcome to your new single-page application, built with:</p>\r\n<ul>\r\n    <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>\r\n    <li><a href='https://angular.io/'>Angular</a> and <a href='http://www.typescriptlang.org/'>TypeScript</a> for client-side code</li>\r\n    <li><a href='https://webpack.github.io/'>Webpack</a> for building and bundling client-side resources</li>\r\n    <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>\r\n</ul>\r\n<p>To help you get started, we've also set up:</p>\r\n<ul>\r\n    <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.</li>\r\n    <li><strong>Server-side prerendering</strong>. For faster initial loading and improved SEO, your Angular app is prerendered on the server. The resulting HTML is then transferred to the browser where a client-side copy of the app takes over.</li>\r\n    <li><strong>Webpack dev middleware</strong>. In development mode, there's no need to run the <code>webpack</code> build tool. Your client-side resources are dynamically built on demand. Updates are available as soon as you modify any file.</li>\r\n    <li><strong>Hot module replacement</strong>. In development mode, you don't even need to reload the page after making most changes. Within seconds of saving changes to files, your Angular app will be rebuilt and a new instance injected is into the page.</li>\r\n    <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and the <code>webpack</code> build tool produces minified static CSS and JavaScript files.</li>\r\n</ul>\r\n";
-
-/***/ }),
 /* 33 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class='main-nav'>\r\n    <div class='navbar navbar-inverse'>\r\n        <div class='navbar-header'>\r\n            <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>\r\n                <span class='sr-only'>Toggle navigation</span>\r\n                <span class='icon-bar'></span>\r\n                <span class='icon-bar'></span>\r\n                <span class='icon-bar'></span>\r\n            </button>\r\n            <a class='navbar-brand' [routerLink]=\"['/home']\">aspnetcore_angular_component_building</a>\r\n        </div>\r\n        <div class='clearfix'></div>\r\n        <div class='navbar-collapse collapse'>\r\n            <ul class='nav navbar-nav'>\r\n                <li [routerLinkActive]=\"['link-active']\">\r\n                    <a [routerLink]=\"['/home']\">\r\n                        <span class='glyphicon glyphicon-home'></span> Home\r\n                    </a>\r\n                </li>\r\n                <li [routerLinkActive]=\"['link-active']\">\r\n                    <a [routerLink]=\"['/counter']\">\r\n                        <span class='glyphicon glyphicon-education'></span> Counter\r\n                    </a>\r\n                </li>\r\n                <li [routerLinkActive]=\"['link-active']\">\r\n                    <a [routerLink]=\"['/fetch-data']\">\r\n                        <span class='glyphicon glyphicon-th-list'></span> Fetch data\r\n                    </a>\r\n                </li>\r\n                   <li [routerLinkActive]=\"['link-active']\">\r\n                    <a [routerLink]=\"['/photos']\">\r\n                        <span class='glyphicon glyphicon-th-list'></span> Photos\r\n                    </a>\r\n                </li>                \r\n                <li [routerLinkActive]=\"['link-active']\">\r\n                    <a [routerLink]=\"['/forms']\">\r\n                        <span class='glyphicon glyphicon-th-list'></span> Forms\r\n                    </a>\r\n                    <ul>\r\n                        <li [routerLinkActive]=\"['link-active']\">\r\n                            <a [routerLink]=\"['/forms/multi-step']\">\r\n                                Multi Step Form\r\n                            </a>\r\n                        </li>\r\n                    </ul>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
+module.exports = "<h4>Forms List Component</h4>\r\n\r\n<div class=\"container\">\r\n    <div class=\"row\">\r\n        <div class=\"col-md-3\" [routerLink]=\"['/forms/template-form']\" >\r\n            Template Form\r\n        </div>\r\n        <div class=\"col-md-3\">\r\n            Reactive Form\r\n        </div>\r\n        <div class=\"col-md-3\">\r\n            Multi-Step Form\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 34 */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n    {{photo.title}}\r\n</div>\r\n\r\n<img [src]=\"photo.url\" alt=\"\">\r\n\r\n<button (click)=\"GoBack()\" >\r\n    Go Back\r\n</button>";
+module.exports = "<h2>Template Form</h2>\r\n\r\n\r\n<div class=\"panel-body\">\r\n    <form class=\"form-horizontal\"\r\n          novalidate\r\n          (ngSubmit)=\"save(signupForm)\"\r\n          #signupForm=\"ngForm\">\r\n\r\n          <fieldset>\r\n              <div class=\"form-group\"\r\n                   [ngClass]=\"{'has-error': (firstNameVar.touched || firstNameVar.ditry) && !firstNameVar.valid}\">\r\n                   <label for=\"firstNameId\" class=\"col-md-2 control-label\">First Name</label>\r\n\r\n                   <div class=\"col-md-8\">\r\n                       <input type=\"text\" \r\n                              class=\"form-control\"\r\n                              id=\"firstNameId\"\r\n                              placeholder=\"First Name (required)\"\r\n                              required\r\n                              minlength=\"3\"\r\n                              [(ngModel)]=customer.firstName\r\n                              name=\"firstName\"\r\n                              #firstNameVar=\"ngModel\"/>\r\n\r\n                        <span class=\"help-block\" *ngIf=\"(firstNameVar.touched || firstNameVar.dirty) && firstNameVar.errors\">\r\n                            <span *ngIf=\"firstNameVar.errors.required\">\r\n                                Please enter your first name.\r\n                            </span>\r\n                            <span *ngIf=\"firstNameVar.errors.minlength\">\r\n                                The first name must be longer than 3 characters\r\n                            </span>        \r\n                        </span>\r\n                   </div>\r\n              </div>\r\n\r\n              <div class=\"form-group\"\r\n                   [ngClass]=\"{'has-error': (lastNameVar.touched || lastNameVar.ditry) && !lastNameVar.valid}\">\r\n                   <label for=\"lastNameId\" class=\"col-md-2 control-label\">Last Name</label>\r\n\r\n                   <div class=\"col-md-8\">\r\n                       <input type=\"text\" \r\n                              class=\"form-control\"\r\n                              id=\"lastNameId\"\r\n                              placeholder=\"Last Name (required)\"\r\n                              required\r\n                              minlength=\"3\"\r\n                              [(ngModel)]=customer.lastName\r\n                              name=\"lastName\"\r\n                              #lastNameVar=\"ngModel\"/>\r\n\r\n                        <span class=\"help-block\" *ngIf=\"(lastNameVar.touched || lastNameVar.dirty) && lastNameVar.errors\">\r\n                            <span *ngIf=\"lastNameVar.errors.required\">\r\n                                Please enter your last name.\r\n                            </span>\r\n                            <span *ngIf=\"lastNameVar.errors.minlength\">\r\n                                The last name must be longer than 3 characters\r\n                            </span>        \r\n                        </span>\r\n                   </div>\r\n              </div>\r\n\r\n                <div class=\"form-group\">\r\n                       <div class=\"col-md-4 col-md-offset-2\">\r\n                           <span>\r\n                               <button class=\"btn btn-primary\"\r\n                                       type=\"submit\"\r\n                                       [disabled]=\"!signupForm.valid\">\r\n                                   Save\r\n                               </button>\r\n                           </span>\r\n                       </div>\r\n                   </div>\r\n          </fieldset>\r\n\r\n    </form>\r\n</div>\r\n\r\n\r\n";
 
 /***/ }),
 /* 35 */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"photosReady\">\r\n<div *ngFor=\"let photo of photos\" class='photo-list'>\r\n    <div [routerLink]=\"['/photos', photo.id]\">\r\n    <img [src]=\"photo.url\" alt=\"photo.title\"><br>\r\n    <span><star-rating [rating]=\"photo.rating\"></star-rating></span>\r\n    </div>\r\n</div>\r\n</div>";
+module.exports = "<h1>Hello, world!</h1>\r\n<p>Welcome to your new single-page application, built with:</p>\r\n<ul>\r\n    <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>\r\n    <li><a href='https://angular.io/'>Angular</a> and <a href='http://www.typescriptlang.org/'>TypeScript</a> for client-side code</li>\r\n    <li><a href='https://webpack.github.io/'>Webpack</a> for building and bundling client-side resources</li>\r\n    <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>\r\n</ul>\r\n<p>To help you get started, we've also set up:</p>\r\n<ul>\r\n    <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.</li>\r\n    <li><strong>Server-side prerendering</strong>. For faster initial loading and improved SEO, your Angular app is prerendered on the server. The resulting HTML is then transferred to the browser where a client-side copy of the app takes over.</li>\r\n    <li><strong>Webpack dev middleware</strong>. In development mode, there's no need to run the <code>webpack</code> build tool. Your client-side resources are dynamically built on demand. Updates are available as soon as you modify any file.</li>\r\n    <li><strong>Hot module replacement</strong>. In development mode, you don't even need to reload the page after making most changes. Within seconds of saving changes to files, your Angular app will be rebuilt and a new instance injected is into the page.</li>\r\n    <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and the <code>webpack</code> build tool produces minified static CSS and JavaScript files.</li>\r\n</ul>\r\n";
 
 /***/ }),
 /* 36 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class='crop' [title]='rating' [style.width.px]='starWidth'>\r\n    <div style='width: 86px;'>\r\n        <span class=\"glyphicon glyphicon-star\"></span>\r\n        <span class=\"glyphicon glyphicon-star\"></span>\r\n        <span class=\"glyphicon glyphicon-star\"></span>\r\n        <span class=\"glyphicon glyphicon-star\"></span>\r\n        <span class=\"glyphicon glyphicon-star\"></span>\r\n    </div>\r\n</div>";
+module.exports = "<div class='main-nav'>\r\n    <div class='navbar navbar-inverse'>\r\n        <div class='navbar-header'>\r\n            <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>\r\n                <span class='sr-only'>Toggle navigation</span>\r\n                <span class='icon-bar'></span>\r\n                <span class='icon-bar'></span>\r\n                <span class='icon-bar'></span>\r\n            </button>\r\n            <a class='navbar-brand' [routerLink]=\"['/home']\">aspnetcore_angular_component_building</a>\r\n        </div>\r\n        <div class='clearfix'></div>\r\n        <div class='navbar-collapse collapse'>\r\n            <ul class='nav navbar-nav'>\r\n                <li [routerLinkActive]=\"['link-active']\">\r\n                    <a [routerLink]=\"['/home']\">\r\n                        <span class='glyphicon glyphicon-home'></span> Home\r\n                    </a>\r\n                </li>\r\n                <li [routerLinkActive]=\"['link-active']\">\r\n                    <a [routerLink]=\"['/counter']\">\r\n                        <span class='glyphicon glyphicon-education'></span> Counter\r\n                    </a>\r\n                </li>\r\n                <li [routerLinkActive]=\"['link-active']\">\r\n                    <a [routerLink]=\"['/fetch-data']\">\r\n                        <span class='glyphicon glyphicon-th-list'></span> Fetch data\r\n                    </a>\r\n                </li>\r\n                   <li [routerLinkActive]=\"['link-active']\">\r\n                    <a [routerLink]=\"['/photos']\">\r\n                        <span class='glyphicon glyphicon-th-list'></span> Photos\r\n                    </a>\r\n                </li>                \r\n                <li [routerLinkActive]=\"['link-active']\">\r\n                    <a [routerLink]=\"['/forms']\">\r\n                        <span class='glyphicon glyphicon-th-list'></span> Forms\r\n                    </a>\r\n                    <ul>\r\n                        <li [routerLinkActive]=\"['link-active']\">\r\n                            <a [routerLink]=\"['/forms/multi-step']\">\r\n                                Multi Step Form\r\n                            </a>\r\n                        </li>\r\n                    </ul>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
 
 /***/ }),
 /* 37 */
+/***/ (function(module, exports) {
+
+module.exports = "<div>\r\n    {{photo.title}}\r\n</div>\r\n\r\n<img [src]=\"photo.url\" alt=\"\">\r\n\r\n<button (click)=\"GoBack()\" >\r\n    Go Back\r\n</button>";
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports) {
+
+module.exports = "<div *ngIf=\"photosReady\">\r\n<div *ngFor=\"let photo of photos\" class='photo-list'>\r\n    <div [routerLink]=\"['/photos', photo.id]\">\r\n    <img [src]=\"photo.url\" alt=\"photo.title\"><br>\r\n    <span><star-rating [rating]=\"photo.rating\"></star-rating></span>\r\n    </div>\r\n</div>\r\n</div>";
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class='crop' [title]='rating' [style.width.px]='starWidth'>\r\n    <div style='width: 86px;'>\r\n        <span class=\"glyphicon glyphicon-star\"></span>\r\n        <span class=\"glyphicon glyphicon-star\"></span>\r\n        <span class=\"glyphicon glyphicon-star\"></span>\r\n        <span class=\"glyphicon glyphicon-star\"></span>\r\n        <span class=\"glyphicon glyphicon-star\"></span>\r\n    </div>\r\n</div>";
+
+/***/ }),
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2470,7 +2551,7 @@ var isArray = Array.isArray || function (xs) {
 
 
 /***/ }),
-/* 38 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2562,18 +2643,18 @@ var objectKeys = Object.keys || function (obj) {
 
 
 /***/ }),
-/* 39 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-exports.decode = exports.parse = __webpack_require__(37);
-exports.encode = exports.stringify = __webpack_require__(38);
+exports.decode = exports.parse = __webpack_require__(40);
+exports.encode = exports.stringify = __webpack_require__(41);
 
 
 /***/ }),
-/* 40 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process, global) {/*! *****************************************************************************
@@ -3701,10 +3782,10 @@ var Reflect;
             Function("return this;")());
 })(Reflect || (Reflect = {}));
 //# sourceMappingURL=Reflect.js.map
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(47), __webpack_require__(52)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(50), __webpack_require__(55)))
 
 /***/ }),
-/* 41 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3717,11 +3798,11 @@ module.exports = function (str) {
 
 
 /***/ }),
-/* 42 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(23);
+        var result = __webpack_require__(25);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -3731,11 +3812,11 @@ module.exports = function (str) {
     
 
 /***/ }),
-/* 43 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__(24);
+        var result = __webpack_require__(26);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -3745,7 +3826,7 @@ module.exports = function (str) {
     
 
 /***/ }),
-/* 44 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*eslint-env browser*/
@@ -3789,7 +3870,7 @@ var colors = {
 };
 ansiHTML.setColors(colors);
 
-var Entities = __webpack_require__(25).AllHtmlEntities;
+var Entities = __webpack_require__(27).AllHtmlEntities;
 var entities = new Entities();
 
 exports.showProblems =
@@ -3830,7 +3911,7 @@ function problemType (type) {
 
 
 /***/ }),
-/* 45 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -3968,7 +4049,7 @@ module.exports = function(hash, moduleMap, options) {
 
 
 /***/ }),
-/* 46 */
+/* 49 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -3996,43 +4077,43 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 47 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(12);
 
 /***/ }),
-/* 48 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(37);
 
 /***/ }),
-/* 49 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(39);
 
 /***/ }),
-/* 50 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(46);
 
 /***/ }),
-/* 51 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(5);
 
 /***/ }),
-/* 52 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(7);
 
 /***/ }),
-/* 53 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(9);
